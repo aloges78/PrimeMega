@@ -81,7 +81,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ───「[𝚂𝚈𝙰𝚂𝙰 [ʀᴏʙᴏᴛ]](https://t.me/syasaaXrobot)」───
+ ───「[𝚂𝚈𝙰𝚂𝙰 ʀᴏʙᴏᴛ](https://t.me/syasaaXrobot)」───
 *Hello {} !*
 ────────────────────────
 ✪ Saya adalah bot Manager + Music + Streaming Di rancang untuk Memutar Music + Streaming dan Manager Untuk Group Anda.
@@ -92,11 +92,11 @@ Tekan /help untuk melihat perintah yang tersedia.
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ Add Prime Mega to your group ➕️", url="t.me/syasaaXrobot?startgroup=true"
+            text="➕️ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕️", url="t.me/syasaaXrobot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="Support", url="https://t.me/PrimeSupportGroup"
+        InlineKeyboardButton(text="Support", url="https://t.me/musikansini"
         ),
         InlineKeyboardButton(
             text="Perintah Music", url="https://t.me/Syasamusic/3"
