@@ -12,7 +12,8 @@ from pyrogram.types import (
 
 from PrimeMega import pbot as Client
 from PrimeMega import (
-    OWNER_ID as owner,
+    OWNER_ID as owner_id,
+    OWNER_USERNAME as owner_usn,
     SUPPORT_CHAT as log,
 )
 from PrimeMega.utils.errors import capture_err
@@ -46,41 +47,44 @@ async def bug(_, msg: Message):
     datetimes_fmt = "%d-%m-%Y"
     datetimes = datetime.utcnow().strftime(datetimes_fmt)
 
-    thumb = "https://telegra.ph/file/efc27dec817626cc95016.jpg"
+    thumb = "https://telegra.ph/file/68441e158a932891de074.jpg"
     
     bug_report = f"""
-**#BUG : ** **[Lord](https://t.me/Bukan_guudlooking)**
+**#BUG : ** **@{owner_usn}**
+
 **From User : ** **{mention}**
 **User ID : ** **{user_id}**
 **Group : ** **{chat_username}**
+
 **Bug Report : ** **{bugs}**
+
 **Event Stamp : ** **{datetimes}**"""
 
     
     if msg.chat.type == "private":
-        await msg.reply_text("❎ <b>This command only works in groups.</b>")
+        await msg.reply_text("❎ <b>This Command Only Works In Groups.</b>")
         return
 
-    if user_id == owner:
+    if user_id == owner_id:
         if bugs:
             await msg.reply_text(
-                f"❎ <b>How can be owner bot reporting bug idiot??</b>",
+                "❎ <b>How Can Be Owner Bot Reporting Bug??</b>",
             )
             return
         else:
             await msg.reply_text(
-                f"❎ <b>Owner noob!</b>",
+                "Owner Noob 😒!"
             )
-    elif user_id != owner:
+    elif user_id != owner_id:
         if bugs:
             await msg.reply_text(
                 f"<b>Bug Report : {bugs}</b>\n\n"
-                "✅ <b>The bug was successfully reported to the support group!</b>",
+                "✅ <b>The Bug Was Successfully Reported To The Support Group!</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴄʟᴏsᴇ", callback_data=f"close_reply")
+                                "Close", callback_data=f"close_reply")
                         ]
                     ]
                 )
@@ -93,29 +97,38 @@ async def bug(_, msg: Message):
                     [
                         [
                             InlineKeyboardButton(
-                                "➡ ᴠɪᴇᴡ ʙᴜɢ", url=f"{msg.link}")
+                                "View Bug", url=f"{msg.link}"),
+                            InlineKeyboardButton(
+                                "Get Help", url=f"http://t.me/FlicksMusicBot?start=help"),
                         ],
                         [
                             InlineKeyboardButton(
-                                "ᴄʟᴏsᴇ", callback_data=f"close_send_photo")
+                                "Close", callback_data="close_send_photo"),
                         ]
                     ]
                 )
             )
         else:
             await msg.reply_text(
-                f"❎ <b>No bug to Report!</b>",
+                f"❎ <b>No Bug To Report!</b>",
             )
         
-    
 
 @Client.on_callback_query(filters.regex("close_reply"))
 async def close_reply(msg, CallbackQuery):
     await CallbackQuery.message.delete()
 
 @Client.on_callback_query(filters.regex("close_send_photo"))
-async def close_send_photo(Client, CallbackQuery):
-    await CallbackQuery.message.delete()
-
+async def close_send_photo(_, CallbackQuery):
+    is_Admin = await Client.get_chat_member(
+        CallbackQuery.message.chat.id, CallbackQuery.from_user.id
+    )
+    if not is_Admin.can_delete_messages:
+        return await CallbackQuery.answer(
+            "⛔ You're Not Allowed To Close This.", show_alert=True
+        )
+    else:
+        await CallbackQuery.message.delete()
+        
 
 __mod_name__ = "Bug"
