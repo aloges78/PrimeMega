@@ -81,7 +81,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ───「[𝚂𝚈𝙰𝚂𝙰 ʀᴏʙᴏᴛ](https://t.me/syasaaXrobot)」───
+ ───「[sᴀsᴀ 〆 ʀᴏʙᴏᴛ](https://t.me/sasamusicxbot)」───
 *Hello {} !*
 ────────────────────────
 ✪ Saya adalah bot Manager + Music + Streaming Di rancang untuk Memutar Music + Streaming dan Manager Untuk Group Anda.
@@ -92,14 +92,14 @@ Tekan /help untuk melihat perintah yang tersedia.
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕️", url="t.me/syasaaXrobot?startgroup=true"
+            text="➕️ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕️", url="t.me/sasamusicxbot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="Support", url="https://t.me/musikansini"
+        InlineKeyboardButton(text="Support", url="https://t.me/juvenileeeeee"
         ),
         InlineKeyboardButton(
-            text="Perintah Music", url="https://t.me/Syasamusic/3"
+            text="Perintah Music", callback_data="source_"
         ),
     ],
     [
@@ -231,7 +231,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Hi I'm 𝚂𝚈𝙰𝚂𝙰 [ʀᴏʙᴏᴛ]!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
+            f"<b>Hi I'm sᴀsᴀ 〆 ʀᴏʙᴏᴛ!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML
        )
 
