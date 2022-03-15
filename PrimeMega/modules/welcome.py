@@ -198,7 +198,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply
+                    f"Welcome to {html.escape(chat.title)} my Owner.", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -234,7 +234,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome WOLVES
             if new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "Oof! A Soldier Users just joined!", reply_to_message_id=reply
+                    "Halo, selamat datang di {html.escape(chat.title)}!", reply_to_message_id=reply
                 )
                 continue
 
