@@ -85,7 +85,10 @@ PM_START_TEXT = """
 *Hello {} !*
 ────────────────────────
 ✪ Saya adalah bot Manager + Music + Streaming Di rancang untuk Memutar Music + Streaming dan Manager Untuk Group Anda.
-────────────────────
+───────────────────────
+`{}` *pengguna*
+di *pakai* `{}` *Grups.*
+••••••••••••••••••••••••••
 Tekan /help untuk melihat perintah yang tersedia.
 """
 
