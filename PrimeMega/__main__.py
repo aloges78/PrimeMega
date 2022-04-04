@@ -84,8 +84,9 @@ PM_START_TEXT = """
  ───「[sᴀsᴀ 〆 ʀᴏʙᴏᴛ](https://t.me/sasamusicxbot)」───
 *Hello {} !*
 ────────────────────────
-✪ Saya adalah bot Manager + Music + Streaming Di rancang untuk Memutar Music + Streaming dan Manager Untuk Group Anda.
-✪  *Waktu Operasi Server :* `{}`, `{}` *pengguna, di pakai* `{}` *obrolan.*
+✪ Saya adalah bot manager mengelola grup + memutar musik + memutar video/stream  di obrolan suara grup.
+✪  *Waktu Operasi Server :* `{}`,
+✪  `{}` *pengguna, di pakai* oleh `{}` *grup.*
 ───────────────────────
 Tekan /help untuk melihat perintah yang tersedia.
 """
