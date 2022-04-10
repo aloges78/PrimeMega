@@ -98,7 +98,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="Support", url="https://t.me/juvenileeeeee"
+        InlineKeyboardButton(text="Support", callback_data="prime_support"
         ),
         InlineKeyboardButton(
             text="Perintah Music", callback_data="source_"
@@ -440,13 +440,13 @@ def prime_about_callback(update, context):
     elif query.data == "prime_support":
         query.message.edit_text(
             text="*๏ PrimeMega support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on PrimeMega.",
+            "\nJoin My Support Group/Channel for see or report a problem on syasaXrobot.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/PrimeSupportGroup"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/PrimeSupportChannel"),
+                    InlineKeyboardButton(text="Support", url="t.me/juvenileeeeee"),
+                    InlineKeyboardButton(text="Channel", url="t.me/ngikkkkkg"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="prime_"),
