@@ -94,7 +94,10 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     SESSION_STRING = os.environ.get("SESSION_STRING", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
-    DB_URL = os.environ.get("SQLALCHEMY_DATABASE_URI", "postgres://nxnqcseswcuqwr:69b42f133f8bc26ea90a45d7ca51b3fb0fd8322aa19876a9732c4a55728230b5@ec2-44-194-4-127.compute-1.amazonaws.com:5432/datuv61vsh75ti")
+    BOT_NAME = os.environ.get("BOT_NAME", None)
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
+    DB_URL = os.environ.get("DATABASE_URL")
+    DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     ARQ_API = os.environ.get("ARQ_API", None)
@@ -115,15 +118,17 @@ if ENV:
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
+    SUPPORT_CHANNEL = os.environ.get("SUPPORT_CHANNEL", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
     CF_API_KEY = os.environ.get("CF_API_KEY", None)
     WELCOME_DELAY_KICK_SEC = os.environ.get("WELCOME_DELAY_KICL_SEC", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
-    ARQ_API_URL = "https://thearq.tech/"
-    ARQ_API_KEY = "BCYKVF-KYQWFM-JCMORU-RZWOFQ-ARQ"
-    ERROR_LOGS = os.environ.get("ERROR_LOGS", -1001578091827)
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.in")
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
+    ERROR_LOGS = os.environ.get("ERROR_LOGS", None)
+    PHOTO = os.environ.get("PHOTO", "https://telegra.ph/file/efc27dec817626cc95016.jpg")
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
@@ -195,14 +200,17 @@ else:
     TIME_API_KEY = Config.TIME_API_KEY
     WALL_API = Config.WALL_API
     SUPPORT_CHAT = Config.SUPPORT_CHAT
+    SUPPORT_CHANNEL = Config.SUPPORT_CHANNEL
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     SESSION_STRING = Config.SESSION_STRING
     INFOPIC = Config.INFOPIC
+    BOT_NAME = Config.BOT_NAME
     BOT_USERNAME = Config.BOT_USERNAME
     STRING_SESSION = Config.STRING_SESSION
     LASTFM_API_KEY = Config.LASTFM_API_KEY
     CF_API_KEY = Config.CF_API_KEY
+    PHOTO = Config.PHOTO
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
